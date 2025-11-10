@@ -1,19 +1,22 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
+import {useRouter} from 'expo-router'
 
 const index = () => {
+
+  const router = useRouter()
   return (
     <View style={styles.container}>
        <View style={styles.content}>
            <Text style={styles.title}>Welcome</Text>
            <Text style={styles.subtitle}>Login or Singup to FarmFresh</Text>
 
-           <TouchableOpacity style={[styles.button , styles.loginButton]}>
+           <TouchableOpacity style={[styles.button , styles.loginButton]} onPress={()=>router.push('/(auth)/login')} >
               <Text style={styles.buttonText} >Login</Text>
            </TouchableOpacity>
 
 
-           <TouchableOpacity style={[styles.button , styles.signupButton]}>
+           <TouchableOpacity style={[styles.button , styles.signupButton]} onPress={()=>router.push('/(auth)/signup')}>
               <Text style={styles.signupButtonText} >Sign Up</Text>
            </TouchableOpacity>
 
