@@ -47,6 +47,10 @@ const apiRequest = async (
 export const authApi = {
   // signup
   signup: async (name, email, password) => {
-    
+     return apiRequest('/api/auth/signup',"POST" , {name , email , password} )
+  },
+
+  login: async (email, password) => {
+     return apiRequest('/api/auth/login',"POST" , { email , password} )
   },
 };
